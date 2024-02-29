@@ -1,8 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
 
-import router from '@/routes';
-import { DEFAULT_PORT } from '@/utils/constants';
+import router from '../src/routes';
+import { DEFAULT_PORT } from '../src/utils/constants';
 
 dotenv.config();
 

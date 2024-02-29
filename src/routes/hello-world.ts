@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { helloWorld } from '@/controllers';
+import { helloWorld } from '../controllers';
 
 const router = express.Router({ mergeParams: true });
 
