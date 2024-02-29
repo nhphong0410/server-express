@@ -5,11 +5,5 @@
       "source": "/(.*)",
       "destination": "/api"
     }
-  ],
-  "functions": {
-    "api/*": {
-      "memory": 2048,
-      "maxDuration": 30
-    }
-  }
+  ]
 }
