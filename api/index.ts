@@ -10,7 +10,10 @@ const app = express();
 const port = process.env.PORT || DEFAULT_PORT;
 
 app.use(express.static('public'));
-app.use(router);
+app.use('/api', router);
+app.get('/', (request, response) => {
+  response.send('Server is running!');
+});
 
 app.listen(port);
 
