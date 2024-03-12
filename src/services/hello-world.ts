@@ -9,11 +9,15 @@ class HelloWorldService {
 
   async hello() {
     try {
+      await this.client.connect();
+
       const result = await this.client.db('Test').collection('Text').findOne();
 
       return result?.Text;
     } catch (error) {
       throw error;
+    } finally {
+      await this.client.close();
     }
   }
 };
