@@ -1,10 +1,10 @@
 import express from 'express';
-import dotenv from 'dotenv';
+import { configDotenv } from 'dotenv';
 
 import router from '../src/routes';
 import { DEFAULT_PORT } from '../src/utils/constants';
 
-dotenv.config();
+configDotenv();
 
 const app = express();
 const port = process.env.PORT || DEFAULT_PORT;
