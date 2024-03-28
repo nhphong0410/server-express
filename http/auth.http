@@ -1,2 +1,8 @@
 POST http://localhost:5000/api/auth/sign-up HTTP/1.1
 content-type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "0123456789",
+  "repeatPassword": "0123456789"
+}

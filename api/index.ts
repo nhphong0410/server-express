@@ -1,6 +1,7 @@
 import express from 'express';
 import { configDotenv } from 'dotenv';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 
 import router from '../src/routes';
 import { DEFAULT_PORT } from '../src/utils/constants';
@@ -16,6 +17,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use('/api', router);
 app.get('/', (request, response) => {
   response.send('Server is running!');
