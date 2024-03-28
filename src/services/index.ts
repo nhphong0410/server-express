@@ -1,1 +1,2 @@
-export * from './hello-world';
+export * as helloWorldService from './hello-world.service';
+export * as authService from './auth.service';
