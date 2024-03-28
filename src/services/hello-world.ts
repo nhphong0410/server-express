@@ -1,4 +1,4 @@
-import client from '../repos';
+import client from '@repos';
 
 class HelloWorldService {
   private client;
