@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "start": "node public/api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon api/index.ts"
   },
@@ -23,12 +22,5 @@
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
-  },
-  "_moduleAliases": {
-    "@controllers": "./src/controllers",
-    "@repos": "./src/repos",
-    "@routes": "./src/routes",
-    "@services": "./src/services",
-    "@utils": "./src/utils"
   }
 }
