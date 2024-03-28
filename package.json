@@ -25,10 +25,10 @@
     "typescript": "^5.3.3"
   },
   "_moduleAliases": {
-    "@controllers": "./public/src/controllers",
-    "@repos": "./public/src/repos",
-    "@routes": "./public/src/routes",
-    "@services": "./public/src/services",
-    "@utils": "./public/src/utils"
+    "@controllers": "./src/controllers",
+    "@repos": "./src/repos",
+    "@routes": "./src/routes",
+    "@services": "./src/services",
+    "@utils": "./src/utils"
   }
 }
