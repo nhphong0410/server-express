@@ -7,8 +7,6 @@ export const get = async () => {
     const result = await client.db('Test').collection('Text').findOne();
 
     return result?.Text;
-  } catch (error) {
-    throw error;
   } finally {
     await client.close();
   }
