@@ -3,6 +3,6 @@ content-type: application/json
 
 {
   "email": "test@example.com",
-  "password": "0123456789",
-  "repeatPassword": "0123456789"
+  "password": "asdfaf",
+  "repeatPassword": "asdfaf"
 }

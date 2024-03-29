@@ -1,9 +1,9 @@
 import { Request } from "express";
-import { signupBodySchema } from "../utils/schema";
+import { SignUpSchema } from "../utils/schemas";
 
 export const signup = async (request: Request) => {
   const { body } = request;
 
-  const result = await signupBodySchema.validateAsync(body)
+  const result = await SignUpSchema.requestBody.validateAsync(body);
   return result;
 };

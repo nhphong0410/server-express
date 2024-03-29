@@ -1,1 +1,1 @@
-export * as errorHandler from './errorHandler';
+export * as errorHandler from './error-handler.middleware';
