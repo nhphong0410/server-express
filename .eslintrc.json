@@ -45,6 +45,8 @@
     ],
     "no-unused-expressions": "error",
     "no-multiple-empty-lines": "error",
-    "eol-last": "error"
+    "eol-last": "error",
+    "no-var": "error",
+    "no-console": "error"
   }
 }
