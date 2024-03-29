@@ -1,5 +1,5 @@
-import { Request } from "express";
-import { SignUpSchema } from "../utils/schemas";
+import { Request } from 'express';
+import { SignUpSchema } from '../utils/schemas';
 
 export const signup = async (request: Request) => {
   const { body } = request;

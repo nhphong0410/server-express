@@ -1,6 +1,13 @@
-import { ErrorRequestHandler } from "express";
-import { StatusCodes, ReasonPhrases } from "http-status-codes";
-import { ValidationError } from "joi";
+import { ErrorRequestHandler } from 'express';
+import { StatusCodes, ReasonPhrases } from 'http-status-codes';
+import { ValidationError } from 'joi';
+
+export class CustomError extends Error {
+  constructor(message?: string) {
+    super(message);
+    Object.setPrototypeOf(this, CustomError.prototype);
+  }
+}
 
 export const commonErrorHandler: ErrorRequestHandler = (error, _, response, __) => {
   if (error instanceof ValidationError) {
@@ -11,14 +18,14 @@ export const commonErrorHandler: ErrorRequestHandler = (error, _, response, __) 
     });
   }
 
-  if(error instanceof CustomError) {
+  if (error instanceof CustomError) {
     return response.status(StatusCodes.BAD_REQUEST).json({
       code: StatusCodes.BAD_REQUEST,
       message: StatusCodes.BAD_REQUEST,
       details: {
         message: error.message ?? 'Something went wrong'
       }
-    })
+    });
   }
 
   response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
@@ -29,10 +36,3 @@ export const commonErrorHandler: ErrorRequestHandler = (error, _, response, __) 
     }
   });
 };
-
-export class CustomError extends Error {
-  constructor(message?: string) {
-    super(message);
-    Object.setPrototypeOf(this, CustomError.prototype);
-  }
-}
