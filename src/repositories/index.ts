@@ -1,1 +1,1 @@
-export * as helloWorldRepository from './hello-world.repository';
+export * as mongodbTestRepository from './mongodb-test.repository';

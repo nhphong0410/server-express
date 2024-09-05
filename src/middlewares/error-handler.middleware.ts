@@ -9,7 +9,12 @@ export class CustomError extends Error {
   }
 }
 
-export const commonErrorHandler: ErrorRequestHandler = (error, _, response, __) => {
+export const commonErrorHandler: ErrorRequestHandler = (
+  error,
+  _,
+  response,
+  __
+) => {
   if (error instanceof ValidationError) {
     return response.status(StatusCodes.BAD_REQUEST).json({
       code: StatusCodes.BAD_REQUEST,
@@ -21,9 +26,9 @@ export const commonErrorHandler: ErrorRequestHandler = (error, _, response, __) 
   if (error instanceof CustomError) {
     return response.status(StatusCodes.BAD_REQUEST).json({
       code: StatusCodes.BAD_REQUEST,
-      message: StatusCodes.BAD_REQUEST,
+      message: ReasonPhrases.BAD_REQUEST,
       details: {
-        message: error.message ?? 'Something went wrong'
+        message: error.message ?? 'Something went wrong!'
       }
     });
   }
@@ -32,7 +37,7 @@ export const commonErrorHandler: ErrorRequestHandler = (error, _, response, __) 
     code: StatusCodes.INTERNAL_SERVER_ERROR,
     message: ReasonPhrases.INTERNAL_SERVER_ERROR,
     details: {
-      message: error.message ?? 'Something went wrong'
+      message: error.message ?? 'Something went wrong!'
     }
   });
 };

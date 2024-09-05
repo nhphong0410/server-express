@@ -1,9 +1,9 @@
 import express from 'express';
 
-import { helloWorldController } from '../controllers';
+import { mongodbTestController } from '../controllers';
 
 const router = express.Router({ mergeParams: true });
 
-router.get('/', helloWorldController.helloWorld);
+router.get('/mongodb', mongodbTestController.mongodbTest);
 
 export default router;

@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon api/index.ts",
     "prepare": "husky",
-    "lint": "eslint api src"
+    "lint": "eslint api src",
+    "format": "npx prettier --write ."
   },
   "author": "",
   "license": "ISC",
